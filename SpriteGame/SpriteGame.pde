@@ -16,7 +16,7 @@ void setup()
 
 void draw()
 {
-  background(255,255,255);
+  background(0,0,0);
   
   // make the player move automatically.
   player.keyboardControl();
