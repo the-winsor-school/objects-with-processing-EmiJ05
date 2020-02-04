@@ -6,19 +6,19 @@
 class Vector2
 {
   // the vector's location
-  double x;
-  double y;
+  float x;
+  float y;
   
   // initialize a Sprite at a given coordinate.
-  Vector2(double x, double y)
+  Vector2(float x, float y)
   {
     this.x = x;
     this.y = y;
   }
 
-  double magnitude()
+  float magnitude()
   {
-    return Math.sqrt(this.x*this.x+this.y*this.y); 
+    return (float)(Math.sqrt(this.x*this.x+this.y*this.y)); 
     //returns the magnitude, or the x coordinates squared plus the y coordinates squared
   }
   Vector2 add(Vector2 other)
@@ -37,7 +37,7 @@ class Vector2
     return new Vector2(-(this.x),-(this.y));
     //returns the inverse of a vector by multiplying the widths and lengths by negative one
   }
-  Vector2 scale(double s)
+  Vector2 scale(float s)
   {
     return new Vector2(s*(this.x),s*(this.y));
     //multiplies the vector by a scalar by multiplying both the width and length by it
@@ -49,17 +49,17 @@ class Vector2
   }
   Vector2 unitVector()
   {
-    return new Vector2(x/(Math.sqrt(x*x+y*y)),(y/Math.sqrt(x*x+y*y)));
+    return new Vector2((float)(x/(Math.sqrt(x*x+y*y))),(float)(y/Math.sqrt(x*x+y*y)));
     //returns the unit vector by dividing the width and lengths by the magnitude
   }
-  double dotProduct(Vector2 other)
+  float dotProduct(Vector2 other)
   {
     return this.x*other.x+this.y*other.y;
     //returns the dot product by multiplying the widths and lengths and then adding them
   }
-  double angle(Vector2 other)
+  float angle(Vector2 other)
   {
-    return Math.abs(Math.atan(this.y/this.x)-Math.atan(other.y/other.x));
+    return (float)Math.abs(Math.atan(this.y/this.x)-Math.atan(other.y/other.x));
     //returns the angle by taking the arctan of both of the lengths and finding the difference
   }
 }
